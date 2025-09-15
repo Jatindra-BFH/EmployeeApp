@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "3c2dcde1-3998-4411-915b-d97e116d0b19",
+		"name": "EmployeeApplicationAPIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48431579",
+		"_collection_link": "https://jatindra-mishra-324-194535.postman.co/workspace/Jatindra-nath-Mishra's-Workspac~846d4ad1-a9ae-4b5b-82b8-fc9c8d02ce8c/collection/48431579-3c2dcde1-3998-4411-915b-d97e116d0b19?action=share&source=collection_link&creator=48431579"
+	},
+	"item": [
+		{
+			"name": "Get all employees",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get employee by id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get employee by project id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"employeeId\": 101,\r\n  \"employeeFname\": \"John\",\r\n  \"employeeMname\": \"A.\",\r\n  \"employeeLname\": \"Doe\",\r\n  \"employeeDob\": \"1990-05-15\",\r\n  \"employeeCurrAddr\": \"123 Main Street, Cityville\",\r\n  \"employeePermAddr\": \"456 Oak Avenue, Townsville\",\r\n  \"employeeEmailId\": \"john.doe@example.com\",\r\n  \"employeeContactNo\": \"9876543210\",\r\n  \"projectId\": 301,\r\n  \"companyId\": 101\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update employee",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"employeeId\": 101,\r\n  \"employeeFname\": \"John\",\r\n  \"employeeMname\": \"D.\",\r\n  \"employeeLname\": \"Doe\",\r\n  \"employeeDob\": \"1990-05-15\",\r\n  \"employeeCurrAddr\": \"123 Main Street, Cityville\",\r\n  \"employeePermAddr\": \"456 Oak Avenue, Townsville\",\r\n  \"employeeEmailId\": \"john.doe@example.com\",\r\n  \"employeeContactNo\": \"9876543210\",\r\n  \"projectId\": 301,\r\n  \"companyId\": 101\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employee/101",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employee/101",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee",
+						"101"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
