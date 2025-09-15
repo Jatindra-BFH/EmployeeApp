@@ -48,8 +48,10 @@ public class EmployeeController {
 
     /// Get a single employee by ID
     @GetMapping("/employee/{id}")
-    public ResponseEntity<GetEmployeeResponse> getEmployeeById(@PathVariable GetEmployeeRequest getEmployeeRequest) {
+    public ResponseEntity<GetEmployeeResponse> getEmployeeById(@PathVariable int id) {
         try {
+            var getEmployeeRequest = new GetEmployeeRequest();
+            getEmployeeRequest.id = id;
             var response = service.getEmployeeById(getEmployeeRequest);
             if(response.error == null) {
                 return ResponseEntity.status(HttpStatus.OK).body(response);
@@ -64,8 +66,10 @@ public class EmployeeController {
 
     /// Get employees assigned to a project (by project ID)
     @GetMapping("/employees/project/{id}")
-    public ResponseEntity<GetEmployeesResponse> getEmployeesByProjectId(@PathVariable GetEmployeeRequest getEmployeeRequest) {
+    public ResponseEntity<GetEmployeesResponse> getEmployeesByProjectId(@PathVariable int id) {
         try {
+            var getEmployeeRequest = new GetEmployeeRequest();
+            getEmployeeRequest.id = id;
             var response = service.getEmployeesByProjectId(getEmployeeRequest);
             if(response.error == null) {
                 return ResponseEntity.status(HttpStatus.OK).body(response);
@@ -95,8 +99,10 @@ public class EmployeeController {
 
     /// Delete an employee by ID
     @DeleteMapping("/employee/{id}")
-    public ResponseEntity<DeleteEmployeeResponse> deleteEmployee(@PathVariable DeleteEmployeeRequest deleteEmployeeRequest) {
+    public ResponseEntity<DeleteEmployeeResponse> deleteEmployee(@PathVariable int id) {
         try {
+            var deleteEmployeeRequest = new DeleteEmployeeRequest();
+            deleteEmployeeRequest.employeeId = id;
             var response = service.deleteEmployee(deleteEmployeeRequest);
             if(response.error == null){
                 return ResponseEntity.status(HttpStatus.OK).body(response);
