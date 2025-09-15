@@ -32,7 +32,7 @@ public class EmployeeController {
     }
 
     /// Get all employees
-    @GetMapping("employees")
+    @GetMapping("/employees")
     public ResponseEntity<GetEmployeesResponse> getAllEmployees() {
         try {
             var response = service.getAllEmployees();
